@@ -1,0 +1,67 @@
+From bf05c628ae59956d2a477b58afe9a25cac846cee Mon Sep 17 00:00:00 2001
+From: siisgoo <siisgoo@mail.ru>
+Date: Tue, 24 Nov 2020 21:59:29 +0300
+Subject: [PATCH] 	new file:   movestack.c 	dwm-movestack-6.1.diff
+
+---
+ movestack.c | 48 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+ create mode 100644 movestack.c
+
+diff --git a/movestack.c b/movestack.c
+new file mode 100644
+index 0000000..8d22a6b
+--- /dev/null
++++ b/movestack.c
+@@ -0,0 +1,48 @@
++void
++movestack(const Arg *arg) {
++	Client *c = NULL, *p = NULL, *pc = NULL, *i;
++
++	if(arg->i > 0) {
++		/* find the client after selmon->sel */
++		for(c = selmon->sel->next; c && (!ISVISIBLE(c) || c->isfloating); c = c->next);
++		if(!c)
++			for(c = selmon->clients; c && (!ISVISIBLE(c) || c->isfloating); c = c->next);
++
++	}
++	else {
++		/* find the client before selmon->sel */
++		for(i = selmon->clients; i != selmon->sel; i = i->next)
++			if(ISVISIBLE(i) && !i->isfloating)
++				c = i;
++		if(!c)
++			for(; i; i = i->next)
++				if(ISVISIBLE(i) && !i->isfloating)
++					c = i;
++	}
++	/* find the client before selmon->sel and c */
++	for(i = selmon->clients; i && (!p || !pc); i = i->next) {
++		if(i->next == selmon->sel)
++			p = i;
++		if(i->next == c)
++			pc = i;
++	}
++
++	/* swap c and selmon->sel selmon->clients in the selmon->clients list */
++	if(c && c != selmon->sel) {
++		Client *temp = selmon->sel->next==c?selmon->sel:selmon->sel->next;
++		selmon->sel->next = c->next==selmon->sel?c:c->next;
++		c->next = temp;
++
++		if(p && p != c)
++			p->next = c;
++		if(pc && pc != selmon->sel)
++			pc->next = selmon->sel;
++
++		if(selmon->sel == selmon->clients)
++			selmon->clients = c;
++		else if(c == selmon->clients)
++			selmon->clients = selmon->sel;
++
++		arrange(selmon);
++	}
++}
+-- 
+2.29.2
+
