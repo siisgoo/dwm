@@ -30,31 +30,31 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class		instance	title	tags mask	isfloating   monitor */
-	{ "firefox",		NULL,		NULL,	0,		0,	-1 },
-	{ "KeePass2",		NULL,		NULL,	0,		1,	-1 },
+	/* class		instance		title	tags mask	isfloating   monitor */
+	{ "firefox",		NULL,		NULL,	0,			0,	-1 },
+	{ "KeePass2",		NULL,		NULL,	0,			1,	-1 },
 	{ "st-256color",	NULL,		NULL,	1 << 1,		0,	-1 },
-	{ "IDE",		NULL,		NULL,	1 << 0,		0,	-1 },
+	{ "IDE",			NULL,		NULL,	1 << 0,		0,	-1 },
 	{ "music-pleer",	NULL,		NULL,	1 << 5,		0,	-1 },
-	{ "Luakit",		NULL,		NULL,	1 << 2,		0,	-1 },
-	{ "Steam",		NULL,		NULL,	1 << 6,		1,	-1 },
-	{ NULL,			NULL,		"Steam",1 << 6,		1,	-1 },
-	{ "Gimp",		NULL,		NULL,	1 << 7,		1,	-1 },
-	{ "Sxiv",		NULL,		NULL,	0,		1,	-1 },
-	{ "mpv",		NULL,		NULL,	0,		1,	-1 },
+	{ "Luakit",			NULL,		NULL,	1 << 2,		0,	-1 },
+	{ "Steam",			NULL,		NULL,	1 << 6,		1,	-1 },
+	{ NULL,				NULL,		"Steam",1 << 6,		1,	-1 },
+	{ "Gimp",			NULL,		NULL,	1 << 7,		1,	-1 },
+	{ "Sxiv",			NULL,		NULL,	0,			1,	-1 },
+	{ "mpv",			NULL,		NULL,	0,			1,	-1 },
 	{ "Zathura",		NULL,		NULL,	1 << 4,		0,	-1 },
-	{ "TelegramDesktop",	NULL,		NULL,	1 << 3,		0,	-1 },
-	{ "float",		NULL,		NULL,	0,		1,	-1 },
-	{ NULL,			NULL,	"youtube",	1 << 8,		1,	-1 },
+	{ "TelegramDesktop",NULL,		NULL,	1 << 3,		0,	-1 },
+	{ "float",			NULL,		NULL,	0,		1,	-1 },
+	{ NULL,				NULL,	"youtube",	1 << 8,		1,	-1 },
 	{ "whatsdesk",		NULL,		NULL,	1 << 3,		0,	-1 },
 	{ "diskcord",		NULL,		NULL,	1 << 3,		1,	-1 },
 	/* libreoffice */
 	{ "libreoffice",	NULL,		NULL,	1 << 7,		0,	-1 },
 	{ NULL,			"libreoffice",	NULL,	1 << 7,		0,	-1 },
-	{ NULL,			NULL,		"LibreOffice", 1 << 7,	1,	-1 },
+	{ NULL,				NULL,"LibreOffice", 1 << 7,		1,	-1 },
 	{ "Soffice",		NULL,		NULL,	1 << 7,		1,	-1 },
 	/*    */
-	{ "zoom",		"zoom",		NULL,	1 << 3,		0,	-1 },
+	{ "zoom",			"zoom",		NULL,	1 << 3,		0,	-1 },
 	{ "Thunderbird",	NULL,		NULL,	1 << 3,		1,	-1 },
 };
 
@@ -129,7 +129,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,			XK_t,	   setlayout,	   {.v = &layouts[3]} },
+	{ MODKEY,						XK_t,	   setlayout,	   {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

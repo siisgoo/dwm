@@ -20,7 +20,7 @@ source=(git+https://git.suckless.org/${pkgname}
 	dwm.desktop
 	${patchefiles[@]})
 sha256sums=('SKIP'
-            '3530114df264f486684b76f65a7991bc25e3d90d94d5a16edcfb465b45e5e311'
+            '5f6d28335f6c1814f39f4ec7c5809bafaa7506dc01efc1154e6b5b5db30b7d6c'
             'bc36426772e1471d6dd8c8aed91f288e16949e3463a9933fee6390ee0ccd3f81'
             '55e95ffde7392952ee869ecef3bbf54dc0a84c6cb8e3eced5edaea21e9efc129'
             '1e7082fdf72b4b425a9f7dd2d29b7e33ce9bbe62016c8abaae36afa389d1cf8f'
