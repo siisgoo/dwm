@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	{ "KeePass2",		NULL,		NULL,	0,			1,	-1 },
 	{ "st-256color",	NULL,		NULL,	1 << 1,		0,	-1 },
 	{ "IDE",			NULL,		NULL,	1 << 0,		0,	-1 },
-	{ "music-pleer",	NULL,		NULL,	1 << 5,		0,	-1 },
+	{ "mpc",			NULL,		NULL,	1 << 5,		0,	-1 },
 	{ "Luakit",			NULL,		NULL,	1 << 2,		0,	-1 },
 	{ "Steam",			NULL,		NULL,	1 << 6,		1,	-1 },
 	{ NULL,				NULL,		"Steam",1 << 6,		1,	-1 },
@@ -62,7 +62,7 @@ static const Rule rules[] = {
 static const float mfact     = 0.5;   /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;     /* number of clients in master area */
 static const int resizehints = 1;     /* 1 means respect size hints in tiled resizals */
-static const int attachdirection = 0; /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */ 
+static const int attachdirection = 5; /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */ 
 
 static const Layout layouts[] = {
 	/* symbol	arrange function */
@@ -71,6 +71,27 @@ static const Layout layouts[] = {
 	{ "[m]",	monocle },
 	{ "[t]",	tile },
 };
+
+/* Cool autostart */
+static const char *const autostart[] = {
+		"compton",	"--config",	"/home/pumpurumprumpum/.config/compton.conf",	NULL, //add getenv
+		"sh", "-c", "/home/pumpurumprumpum/.fehbg",	NULL,
+		"st", "-c", "IDE", "-e", "vim",	NULL,
+		"st", "-c", "mpc", "-e", "ncmpcpp",	NULL,
+		"st", NULL,
+		"st", NULL,
+		"st", NULL,
+		"st", NULL,
+		"dunst",	NULL,
+		"notmon",	NULL,
+		"xbanish",	NULL,
+		"autocutsel",	NULL,
+		"slstatus",	NULL,
+		"luakit",	NULL,
+		"whatsdesk",NULL,
+		NULL
+};
+
 
 /* key definitions */
 #define MODKEY Mod4Mask
