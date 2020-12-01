@@ -47,22 +47,22 @@ static const Rule rules[] = {
 	{ "TelegramDesktop",NULL,		NULL,	1 << 3,		0,	-1 },
 	{ "whatsdesk",		NULL,		NULL,	1 << 3,		0,	-1 },
 	{ "zoom",			"zoom",		NULL,	1 << 3,		0,	-1 },
-	/* class		instance		title	tags mask	fl	mon	float x,y,w,h	floatborderpx*/
-	{ "float",			NULL,		NULL,	0,			1,	-1,	50,50,500,500,	1 },
-	{ "Thunderbird",	NULL,		NULL,	1 << 3,		1,	-1,	50,50,500,500,	1 },
-	{ "KeePass2",		NULL,		NULL,	0,			1,	-1,	50,50,500,500,	1 },
-	{ "Steam",			NULL,		NULL,	1 << 6,		1,	-1,	50,50,500,500,	1 },
-	{ NULL,				NULL,		"Steam",1 << 6,		1,	-1,	50,50,500,500,	1 },
-	{ "Gimp",			NULL,		NULL,	1 << 7,		1,	-1,	50,50,500,500,	1 },
-	{ "Sxiv",			NULL,		NULL,	0,			1,	-1,	50,50,500,500,	1 },
-	{ "mpv",			NULL,		NULL,	0,			1,	-1,	50,50,500,500,	1 },
-	{ NULL,				NULL,	"youtube",	1 << 8,		1,	-1,	50,50,500,500,	1 },
-	{ "diskcord",		NULL,		NULL,	1 << 3,		1,	-1,	50,50,500,500,	1 },
+	/* class		instance		title	tags mask	fl	mon	  //float x,y,w,h	floatborderpx*/
+	{ "float",			NULL,		NULL,	0,			1,	-1 }, //	50,50,500,500,	1 },
+	{ "Thunderbird",	NULL,		NULL,	1 << 3,		1,	-1 }, //	50,50,500,500,	1 },
+	{ "KeePass2",		NULL,		NULL,	0,			1,	-1 }, //	50,50,500,500,	1 },
+	{ "Steam",			NULL,		NULL,	1 << 6,		1,	-1 }, //	50,50,500,500,	1 },
+	{ NULL,				NULL,		"Steam",1 << 6,		1,	-1 }, //	50,50,500,500,	1 },
+	{ "Gimp",			NULL,		NULL,	1 << 7,		1,	-1 }, //	50,50,500,500,	1 },
+	{ "Sxiv",			NULL,		NULL,	0,			1,	-1 }, //	50,50,500,500,	1 },
+	{ "mpv",			NULL,		NULL,	0,			1,	-1 }, //	50,50,500,500,	1 },
+	{ NULL,				NULL,	"youtube",	1 << 8,		1,	-1 }, //	50,50,500,500,	1 },
+	{ "diskcord",		NULL,		NULL,	1 << 3,		1,	-1 }, //	50,50,500,500,	1 },
 	/* libreoffice */
-	{ "libreoffice",	NULL,		NULL,	1 << 7,		0,	-1,	50,50,500,500,	1 },
-	{ NULL,			"libreoffice",	NULL,	1 << 7,		0,	-1,	50,50,500,500,	1 },
-	{ NULL,				NULL,"LibreOffice", 1 << 7,		1,	-1,	50,50,500,500,	1 },
-	{ "Soffice",		NULL,		NULL,	1 << 7,		1,	-1,	50,50,500,500,	1 },
+	{ "libreoffice",	NULL,		NULL,	1 << 7,		0,	-1 }, //	50,50,500,500,	1 },
+	{ NULL,			"libreoffice",	NULL,	1 << 7,		0,	-1 }, //	50,50,500,500,	1 },
+	{ NULL,				NULL,"LibreOffice", 1 << 7,		1,	-1 }, //	50,50,500,500,	1 },
+	{ "Soffice",		NULL,		NULL,	1 << 7,		1,	-1 }, //	50,50,500,500,	1 },
 	/*    */
 };
 
