@@ -134,28 +134,10 @@ static const char *termcmd[]     = { "st", NULL };
 static const char *volume_upcmd[]     = { "amixer", "set", "Master", "5%+", NULL };
 static const char *volume_downcmd[]   = { "amixer", "set", "Master", "5%-", NULL };
 static const char *volume_togglecmd[] = { "amixer", "set", "Master", "toggle", NULL };
-/* static const char *scrotcmd[]    = { "scrot", "$HOME/screenshots/%%d.%m.%Y-scrot.jpg", NULL }; */
 
-static void screenshot(const Arg *arg)
-{
-		char savepath[256];
-		char *home = getenv("HOME");
-		sprintf(savepath,
-				"%s/screenshots/%%d.%m.%Y-scrot.jpg", home);
-		if (fork() == 0) {
-			if (dpy)
-				close(ConnectionNumber(dpy));
-			setsid();
-			if (arg->i > 0) {
-				execlp("/usr/bin/scrot", "scrot", savepath, "-q", "100", NULL);
-			} else {
-				execlp("/usr/bin/scrot", "scrot", savepath, "-q", "100", "-u", NULL);
-			}
-			fprintf(stderr, "dwm: scrot");
-			perror(" failed");
-			exit(EXIT_SUCCESS);
-		}
-}
+/* screenshots */
+static const char *scrotcmd[]  = { "scrot", "%Y.%m.%d-%H:%M:%S_$wx$h.png", "-e", "mv $f ~/images/screenshots" , NULL };
+static const char *scrotfcmd[] = { "scrot", "%Y.%m.%d-%H:%M:%S_$wx$h.png", "-u", "-e", "mv $f ~/images/screenshots" , NULL };
 
 #include "mpdcontrol.c"
 #include "movestack.c"
@@ -169,9 +151,10 @@ static Key keys[] = {
 	{ NULL,              			XF86XK_AudioLowerVolume,	spawn,		{.v = volume_downcmd } },
 	{ NULL,              			XF86XK_AudioMute,			spawn,		{.v = volume_togglecmd } },
 	{ NULL,				            XF86XK_AudioPlay,	    	mpd_switch_playback,	{0} },
-	{ NULL,	            			XK_Print,			screenshot,		{.i = +1} },
-	{ MODKEY,            			XK_Print,			screenshot,		{.i = -1} },
-	/* { NULL,	            			XK_Print,			spawn,			{.v = scrotcmd } }, */
+	/* { NULL,	            			XK_Print,			screenshot,		{.i = +1} }, */
+	/* { MODKEY,            			XK_Print,			screenshot,		{.i = -1} }, */
+	{ NULL,	            			XK_Print,			spawn,			{.v = scrotcmd } },
+	{ MODKEY,	           			XK_Print,			spawn,			{.v = scrotfcmd } },
 	{ MODKEY,           			XK_n,			    spawn,			{.v = nm_dmenucmd } },
 	{ MODKEY,                       XK_p,				spawn,			{.v = dmenucmd } },
 	{ MODKEY,                       XK_c,				spawn,			{.v = clipmenucmd } },
