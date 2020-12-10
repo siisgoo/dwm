@@ -6,13 +6,13 @@ url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
 license=('MIT')
 options=(zipman)
-depends=('git' 'libx11' 'libxinerama' 'libxft' 'freetype2' 'st' 'dmenu')
+depends=('git' 'libx11' 'libxinerama' 'libxft' 'freetype2' 'st' 'dmenu' 'mpd')
 install=dwm.install
 patchefiles=(dwm-activetagindicatorbar-6.2.diff
+	dwm-alwayscenter-20200625-f04cac6.diff
 	dwm-attachdirection-20201124-d297fc6.diff
 	dwm-cfacts-20200913-61bb8b2.diff
 	dwm-cool-autostart-6.2.diff
-	dwm-floatrules-20201124-ed6fed0.diff
 	dwm-movestack-20201124-bf05c62.diff
 	dwm-mpdcontrol-20201125-20d5fe9.diff
 	dwm-notitle-20201127-56f5a42.diff
@@ -23,13 +23,13 @@ source=(git+https://git.suckless.org/${pkgname}
 	dwm.desktop
 	${patchefiles[@]})
 md5sums=('SKIP'
-         'c654dfcaaa4657d22ea230957e157b55'
+         '816204ba1269bfed3e81d0cda911010a'
          '939f403a71b6e85261d09fc3412269ee'
          '5a228a44f10b8f78fb46c1d104a1fe1a'
+         'caf67004a0fd9fb0368062b4b563301b'
          '6d6af97228e98181210d6e04a89c0bdf'
          'c61a6eecb95bf2e0535334886c6d2ff5'
          'ccf65a2bd68e517b0900c84507dfb552'
-         'bac5c895f153205fb2048be5963e73e4'
          '1a324df93982b8316e082f864395133b'
          'f61faf7e7bde74f4857a1428b656bd1b'
          '2991e0a1f548f099eb23f6fe4f01f5e4'

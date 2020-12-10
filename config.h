@@ -8,8 +8,8 @@ static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Anonymous Pro:size=12" }; // { "Source Cod Pro:size=12" }; /
-static const char dmenufont[]       = "monospace:size=11";
+static const char *fonts[]          = { "Anonymous Pro:size=13" }; // { "Source Cod Pro:size=12" }; /
+static const char dmenufont[]       = "monospace:size=12";
 static const char col_gray1[]       = "#222222";	//222222 - default
 static const char col_gray2[]       = "#444444";	//444444 - default
 static const char col_gray3[]       = "#e8f6f7";	//bbbbbb - default
@@ -89,7 +89,7 @@ static const Layout layouts[] = {
 /* 	return ret; */
 /* } */
 static const char *const autostart[] = {
-		"compton",	"--config",	"/home/pumpurumprumpum/.config/compton.conf",	NULL,
+		"compton",	"--config",	"/home/xewii/.config/compton.conf",	NULL,
 		"sh", "-c", "/home/pumpurumprumpum/.fehbg",	NULL,
 		"st", "-c", "IDE", "-e", "vim",	NULL,
 		"st", "-c", "mpc", "-e", "ncmpcpp",	NULL,
