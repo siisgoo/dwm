@@ -81,16 +81,9 @@ static const Layout layouts[] = {
 };
 
 /* Cool autostart */
-/* char *appendHome(char *sufix) */
-/* { */
-/* 	char ret[1000]; */
-/* 	sprintf(ret, */
-/* 			"%s/%s", getenv("HOME"), sufix); */
-/* 	return ret; */
-/* } */
 static const char *const autostart[] = {
 		"compton",	"--config",	"/home/xewii/.config/compton.conf",	NULL,
-		"sh", "-c", "/home/pumpurumprumpum/.fehbg",	NULL,
+		"sh", "-c", "/home/xewii/.fehbg",	NULL,
 		"st", "-c", "IDE", "-e", "vim",	NULL,
 		"st", "-c", "mpc", "-e", "ncmpcpp",	NULL,
 		"st", NULL,
@@ -101,6 +94,8 @@ static const char *const autostart[] = {
 		"notmon",	NULL,
 		"xbanish",	NULL,
 		"autocutsel",	NULL,
+		"autocutsel",	"-selection", "PRIMARY", NULL,
+		"clipmenud",	NULL,
 		"slstatus",	NULL,
 		"luakit",	NULL,
 		/* "whatsdesk",NULL, */
@@ -143,16 +138,15 @@ static const char *scrotfcmd[] = { "scrot", "%Y.%m.%d-%H:%M:%S_$wx$h.png", "-u",
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key				function	argument */
-	{ NULL,     	    			XF86XK_AudioNext,	    	mpd_switch_track,	{.i = -1 } },
+	/* { NULL,     	    			XF86XK_AudioNext,	    	mpd_switch_track,	{.i = -1 } }, */
+	{ MODKEY|ShiftMask,    			XK_n,	    				mpd_switch_track,	{.i = -1 } },
 	{ NULL,				            XF86XK_AudioPrev,	    	mpd_switch_track,	{.i = +1 } },
 	{ MODKEY,		            	XF86XK_AudioRaiseVolume,	mpd_volume_ctl,		{.i = +1 } },
 	{ MODKEY,              			XF86XK_AudioLowerVolume,	mpd_volume_ctl,		{.i = -1 } },
+	{ NULL,				            XF86XK_AudioPlay,	    	mpd_switch_playback,	{0} },
 	{ NULL,              			XF86XK_AudioRaiseVolume,	spawn,		{.v = volume_upcmd } },
 	{ NULL,              			XF86XK_AudioLowerVolume,	spawn,		{.v = volume_downcmd } },
 	{ NULL,              			XF86XK_AudioMute,			spawn,		{.v = volume_togglecmd } },
-	{ NULL,				            XF86XK_AudioPlay,	    	mpd_switch_playback,	{0} },
-	/* { NULL,	            			XK_Print,			screenshot,		{.i = +1} }, */
-	/* { MODKEY,            			XK_Print,			screenshot,		{.i = -1} }, */
 	{ NULL,	            			XK_Print,			spawn,			{.v = scrotcmd } },
 	{ MODKEY,	           			XK_Print,			spawn,			{.v = scrotfcmd } },
 	{ MODKEY,           			XK_n,			    spawn,			{.v = nm_dmenucmd } },

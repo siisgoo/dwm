@@ -23,7 +23,7 @@ source=(git+https://git.suckless.org/${pkgname}
 	dwm.desktop
 	${patchefiles[@]})
 md5sums=('SKIP'
-         '816204ba1269bfed3e81d0cda911010a'
+         '1ace66575c3e821ef47d7e0738f4e322'
          '939f403a71b6e85261d09fc3412269ee'
          '5a228a44f10b8f78fb46c1d104a1fe1a'
          'caf67004a0fd9fb0368062b4b563301b'
