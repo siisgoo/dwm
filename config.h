@@ -25,12 +25,12 @@ static const char *colors[][3]      = {
 /*
  *  
  *  
- *    
+ *   
  * ☕
  *  
  * ⌘  
  */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class		instance		title	tags mask	isfloating   monitor */
-	{ "firefox",		NULL,		NULL,	0,			0,	-1 },
+	{ "firefox",		NULL,		NULL,	1 << 2,		0,	-1 },
 	{ "st-256color",	NULL,		NULL,	1 << 1,		0,	-1 },
 	{ "IDE",			NULL,		NULL,	1 << 0,		0,	-1 },
 	{ "mpc",			NULL,		NULL,	1 << 5,		0,	-1 },
@@ -57,7 +57,7 @@ static const Rule rules[] = {
 	{ "Sxiv",			NULL,		NULL,	0,			1,	-1 }, //	50,50,500,500,	1 },
 	{ "mpv",			NULL,		NULL,	0,			1,	-1 }, //	50,50,500,500,	1 },
 	{ NULL,				NULL,	"youtube",	1 << 8,		1,	-1 }, //	50,50,500,500,	1 },
-	{ "diskcord",		NULL,		NULL,	1 << 3,		1,	-1 }, //	50,50,500,500,	1 },
+	{ "discord",		NULL,		NULL,	1 << 3,		1,	-1 }, //	50,50,500,500,	1 },
 	/* libreoffice */
 	{ "libreoffice",	NULL,		NULL,	1 << 7,		0,	-1 }, //	50,50,500,500,	1 },
 	{ NULL,			"libreoffice",	NULL,	1 << 7,		0,	-1 }, //	50,50,500,500,	1 },
@@ -68,7 +68,7 @@ static const Rule rules[] = {
 
 /* layout(s) */
 static const float mfact     = 0.5;   /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 2;     /* number of clients in master area */
+static const int nmaster     = 1;     /* number of clients in master area */
 static const int resizehints = 1;     /* 1 means respect size hints in tiled resizals */
 static const int attachdirection = 5; /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */ 
 
@@ -97,7 +97,7 @@ static const char *const autostart[] = {
 		"autocutsel",	"-selection", "PRIMARY", NULL,
 		"clipmenud",	NULL,
 		"slstatus",	NULL,
-		"luakit",	NULL,
+		"firefox", NULL,
 		/* "whatsdesk",NULL, */
 		NULL
 };

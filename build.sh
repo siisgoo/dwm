@@ -5,7 +5,7 @@ HASH='61bb8b2241d4db08bea4261c82e27cd9797099e7'
 start_dir="${PWD}"
 build_dir="/tmp/suckless_dwm"
 
-deps=(sudo mpd st dmenu git libx11 libxinerama libxft freetype2)
+deps=(sudo mpd git libx11 libxinerama libxft freetype2)
 for dep in ${deps[@]}; do
 	msg=$(pacman -Q $dep 2>&1 1>/dev/null)
 	msg=${msg#*\'}
